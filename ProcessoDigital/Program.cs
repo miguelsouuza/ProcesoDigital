@@ -1,5 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 using ProcessoDigital.Client.Pages;
 using ProcessoDigital.Components;
+using ProcessoDigital.Data.Context;
+using ProcessoDigital.Services.Implementations;
+using ProcessoDigital.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+var connectionStrings = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionStrings));
+
+builder.Services.AddMudServices();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IProcessoService, ProcessoService>();
+builder.Services.AddScoped<IAndamentoService, AndamentoService>();
 
 var app = builder.Build();
 
