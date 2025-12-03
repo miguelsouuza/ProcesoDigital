@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ProcessoDigital.Client/ProcessoDigital.Client.csproj" />
+  <Project Path="ProcessoDigital/ProcessoDigital.csproj" />
+</Solution>
