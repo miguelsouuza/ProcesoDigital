@@ -1,0 +1,4 @@
+wwwroot\appsettings.Development.json
+wwwroot\appsettings.json
+E:\Documentos\Projetos\ProcessoDigital\ProcessoDigital\ProcessoDigital.Client\wwwroot\appsettings.Development.json
+E:\Documentos\Projetos\ProcessoDigital\ProcessoDigital\ProcessoDigital.Client\wwwroot\appsettings.json
