@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProcessoDigital")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b03a1c78c39a3cf84a3b5c0dc49d70326301f99c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07807a2081921153e0386176d096c5ba2d66bebd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProcessoDigital")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProcessoDigital")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

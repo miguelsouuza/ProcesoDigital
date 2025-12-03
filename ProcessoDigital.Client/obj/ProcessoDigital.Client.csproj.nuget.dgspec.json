@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {}
+    "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {}
   },
   "projects": {
-    "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {
+    "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
+        "projectUniqueName": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
         "projectName": "ProcessoDigital.Client",
-        "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
+        "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
         "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\obj\\",
+        "outputPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Documentos\\DevExpress\\DevExpress 21.1\\Components\\Offline Packages",
@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[10.0.100, )",
               "autoReferenced": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",

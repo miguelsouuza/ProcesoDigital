@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pPVD/XZ4bd8=",
+  "dgSpecHash": "hRvQ9CnFkc4=",
   "success": true,
-  "projectFilePath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
+  "projectFilePath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\migue\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

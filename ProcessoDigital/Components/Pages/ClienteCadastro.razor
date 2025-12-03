@@ -1,0 +1,217 @@
+﻿@page "/clientes/cadastro/{Id:int}"
+@rendermode InteractiveWebAssembly
+
+
+<MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-4">
+    <MudIcon Icon="@(_isNew? Icons.Material.Filled.Add : Icons.Material.Filled.Edit)" Class="mr-3" />
+    @( _isNew ? "Novo Cadastro de Cliente" : "Editar Cliente")
+</MudText>
+
+<MudCard Elevation="2">
+    <MudCardContent>
+        <MudForm Model="@_cliente" @ref="@_form" NoValidate="true">
+
+            <MudGrid>
+                <MudItem xs="12" md="8">
+                    <MudTextField Label="Nome Completo / Razão Social"
+                                  HelperText="Obrigatório. Máximo 100 caracteres."
+                                  @bind-Value="_cliente.Nome"
+                                  For="@(() => _cliente.Nome)"
+                                  Variant="Variant.Outlined"
+                                  Required="true" />
+                </MudItem>
+
+                <MudItem xs="12" md="4">
+                    <MudSelect Label="Tipo de Pessoa"
+                               @bind-Value="_cliente.Tipo"
+                               For="@(() => _cliente.Tipo)"
+                               Variant="Variant.Outlined">
+                        <MudSelectItem Value="@(TipoPessoa.Fisica)">Pessoa Física (PF)</MudSelectItem>
+                        <MudSelectItem Value="@(TipoPessoa.Juridica)">Pessoa Jurídica (PJ)</MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+
+                <MudItem xs="12" md="4">
+                    <MudTextField Label="CPF / CNPJ"
+                                  HelperText="Obrigatório."
+                                  @bind-Value="_cliente.Documento"
+                                  For="@(() => _cliente.Documento)"
+                                  Variant="Variant.Outlined"
+                                  Required="true" />
+                </MudItem>
+
+                <MudItem xs="12" md="4">
+                    <MudTextField Label="E-mail"
+                                  @bind-Value="_cliente.Email"
+                                  For="@(() => _cliente.Email)"
+                                  Variant="Variant.Outlined" />
+                </MudItem>
+
+                <MudItem xs="12" md="4">
+                    <MudTextField Label="Telefone"
+                                  @bind-Value="_cliente.Telefone"
+                                  For="@(() => _cliente.Telefone)"
+                                  Variant="Variant.Outlined" />
+                </MudItem>
+
+                <MudItem xs="12">
+                    <MudTextField Label="Endereço Completo"
+                                  Lines="2"
+                                  @bind-Value="_cliente.Endereco"
+                                  For="@(() => _cliente.Endereco)"
+                                  Variant="Variant.Outlined" />
+                </MudItem>
+            </MudGrid>
+        </MudForm>
+    </MudCardContent>
+
+    <MudCardActions Class="pa-4">
+        <MudButton Variant="Variant.Text"
+                   Color="Color.Inherit"
+                   Href="/clientes">
+            Cancelar
+        </MudButton>
+        <MudSpacer />
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Success"
+                   OnClick="SaveClient"
+                   Disabled="@_isLoadingSave"
+                   StartIcon="@Icons.Material.Filled.Save">
+            @(_isLoadingSave ? "Salvando..." : "Salvar Cadastro")
+        </MudButton>
+
+        @if (!_isNew)
+        {
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Error"
+                       OnClick="OpenDeleteDialog"
+                       StartIcon="@Icons.Material.Filled.Delete">
+                Excluir
+            </MudButton>
+        }
+    </MudCardActions>
+</MudCard>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    [Inject]
+    private ProcessoDigital.Services.Interfaces.IClienteService ClienteService { get; set; } = default!;
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+    [Inject]
+    private MudBlazor.ISnackbar Snackbar { get; set; } = default!;
+
+    [Inject]
+    private IJSRuntime JS { get; set; } = default!;
+
+    private ProcessoDigital.Data.Model.Cliente _cliente = new ProcessoDigital.Data.Model.Cliente();
+    private MudForm? _form;
+    private bool _isNew => Id == 0;
+    private bool _isLoadingSave = false;
+    private bool _isLoadingData = true;
+    private bool jsReady = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _isLoadingData = true;
+
+        if (!_isNew)
+        {
+            // Carrega cliente existente
+            var clienteExistente = await ClienteService.GetByIdAsync(Id);
+            if (clienteExistente != null)
+            {
+                _cliente = clienteExistente;
+            }
+            else
+            {
+                // Cliente não encontrado, redireciona ou exibe erro
+                Snackbar.Add("Cliente não encontrado.", Severity.Error);
+                Navigation.NavigateTo("/clientes");
+            }
+        }
+        else
+        {
+            // Novo cliente, inicializa com valores padrão
+            _cliente = new ProcessoDigital.Data.Model.Cliente();
+        }
+
+        _isLoadingData = false;
+    }
+
+    private async Task SaveClient()
+    {
+        if (!jsReady)
+        {
+            return;
+        }
+
+        if (_form is null) return;
+
+        // Dispara a validação do MudForm
+        await _form.Validate();
+
+        if (_form.IsValid)
+        {
+            _isLoadingSave = true;
+            try
+            {
+                if (_isNew)
+                {
+                    await ClienteService.AddAsync(_cliente);
+                    Snackbar.Add("Cliente cadastrado com sucesso!", Severity.Success);
+                }
+                else
+                {
+                    await ClienteService.UpdateAsync(_cliente);
+                    Snackbar.Add("Cliente atualizado com sucesso!", Severity.Success);
+                }
+
+                // Redireciona de volta para a lista
+                Navigation.NavigateTo("/clientes");
+            }
+            catch (Exception ex)
+            {
+                Snackbar.Add($"Erro ao salvar: {ex.Message}", Severity.Error);
+                _isLoadingSave = false;
+            }
+        }
+        else
+        {
+            Snackbar.Add("Preencha os campos obrigatórios corretamente.", Severity.Warning);
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            jsReady = true;
+            await JS.InvokeVoidAsync("console.log", "JS READY");
+        }
+    }
+
+    private async Task OpenDeleteDialog()
+    {
+        if (!jsReady)
+        {
+            return;
+        }
+
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", "Tem certeza que deseja EXCLUIR este cliente? Esta ação é irreversível.");
+
+        if (confirmed)
+        {
+            try
+            {
+                await ClienteService.DeleteAsync(Id);
+                Snackbar.Add("Cliente excluído com sucesso!", Severity.Success);
+                Navigation.NavigateTo("/clientes");
+            }
+            catch (Exception ex)
+            {
+                Snackbar.Add($"Erro ao excluir: {ex.Message}", Severity.Error);
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "ProcessoDigital.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-QEP6O/AprLSJP/d78RitVSWqeaQ4xhIbG//R+/T3JtE=",
+    "hash": "sha256-zSR0/Aja3VIJdhNxU8wWGIY7PlsWD1EDLhLRMSYireg=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.xanz2e7ksm.js"
@@ -86,6 +86,26 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Microsoft.DotNet.HotReload.WebAssembly.Browser.wasm",
         "name": "Microsoft.DotNet.HotReload.WebAssembly.Browser.ttbwk6q8rt.wasm",
         "integrity": "sha256-H/Bfgf0MP/7LYv2KEJTe2yFHdkRe4kJcJNqL5FnO9pM="
+      },
+      {
+        "virtualPath": "Microsoft.EntityFrameworkCore.wasm",
+        "name": "Microsoft.EntityFrameworkCore.0jmstfwrox.wasm",
+        "integrity": "sha256-DPqJ1DzXzrBqnQPsrgR9OnIxPPzoflY9qheOifzx9QQ="
+      },
+      {
+        "virtualPath": "Microsoft.EntityFrameworkCore.Abstractions.wasm",
+        "name": "Microsoft.EntityFrameworkCore.Abstractions.hh6uz1x9px.wasm",
+        "integrity": "sha256-q4zA1/RTaWqHRKKrqV0ttFp41RVnhQxzDOMAO/k2D10="
+      },
+      {
+        "virtualPath": "Microsoft.Extensions.Caching.Abstractions.wasm",
+        "name": "Microsoft.Extensions.Caching.Abstractions.vvlexwbaez.wasm",
+        "integrity": "sha256-tSgl59bRmnTPPQth2CIhnneNwCQELWZttk6S2c6Syb0="
+      },
+      {
+        "virtualPath": "Microsoft.Extensions.Caching.Memory.wasm",
+        "name": "Microsoft.Extensions.Caching.Memory.6z3ajjz4f1.wasm",
+        "integrity": "sha256-Xn7sOZZjP5fk879A/w1ejyt8tzsXqeBhqefdPMsnzpM="
       },
       {
         "virtualPath": "Microsoft.Extensions.Configuration.wasm",
@@ -1054,15 +1074,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "ProcessoDigital.Client.wasm",
-        "name": "ProcessoDigital.Client.3gav2396w1.wasm",
-        "integrity": "sha256-o4RKlY1UYfM8mVejt9cIgTm1stK2wlqbEsJYC4mdARc="
+        "name": "ProcessoDigital.Client.191nz08xhy.wasm",
+        "integrity": "sha256-69a2B7g/iJ3iL3E+Zx1Rx7S0PSYjGXRd7XfI2vc25jI="
       }
     ],
     "pdb": [
       {
         "virtualPath": "ProcessoDigital.Client.pdb",
-        "name": "ProcessoDigital.Client.m9z1i7uker.pdb",
-        "integrity": "sha256-yhYkJ2apuj0D3pLfEOYkCsiZe30+FBIg7E4PxxE4zJI="
+        "name": "ProcessoDigital.Client.fd6p72p3dl.pdb",
+        "integrity": "sha256-g+vuDM/5t8hCUn01loiY/9RiJEXcXXrYle9lqXdZXLk="
       }
     ],
     "libraryInitializers": [
@@ -1105,6 +1125,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "System.Net.Http.WasmEnableStreamingResponse": true,
         "System.Net.SocketsHttpHandler.Http3Support": false,
         "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+        "System.Reflection.NullabilityInfoContext.IsSupported": true,
         "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
         "System.Resources.UseSystemResourceKeys": true,
         "System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported": true,

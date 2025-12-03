@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kXDah/F1/bk=",
+  "dgSpecHash": "WLako1I/Eck=",
   "success": true,
-  "projectFilePath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
+  "projectFilePath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.0\\microsoft.aspnetcore.app.internal.assets.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.0\\microsoft.aspnetcore.authorization.10.0.0.nupkg.sha512",
@@ -13,6 +13,11 @@
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.0\\microsoft.aspnetcore.components.webassembly.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.0\\microsoft.aspnetcore.metadata.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.100\\microsoft.dotnet.hotreload.webassembly.browser.10.0.100.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.0\\microsoft.entityframeworkcore.10.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.0\\microsoft.entityframeworkcore.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.0\\microsoft.entityframeworkcore.analyzers.10.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.0\\microsoft.extensions.caching.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\migue\\.nuget\\packages\\microsoft.extensions.caching.memory\\10.0.0\\microsoft.extensions.caching.memory.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.0\\microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
     "C:\\Users\\migue\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.0\\microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",

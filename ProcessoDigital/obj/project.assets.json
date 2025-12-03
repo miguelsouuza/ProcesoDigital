@@ -579,6 +579,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "10.0.0",
           "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.100",
+          "Microsoft.EntityFrameworkCore": "10.0.0",
           "MudBlazor": "8.15.0"
         },
         "compile": {
@@ -1367,11 +1368,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
+      "projectUniqueName": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
       "projectName": "ProcessoDigital",
-      "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
+      "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital\\ProcessoDigital.csproj",
       "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-      "outputPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital\\obj\\",
+      "outputPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Documentos\\DevExpress\\DevExpress 21.1\\Components\\Offline Packages",
@@ -1397,8 +1398,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {
-              "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcessoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj"
+            "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj": {
+              "projectPath": "E:\\Documentos\\Projetos\\ProcessoDigital\\ProcesoDigital\\ProcessoDigital.Client\\ProcessoDigital.Client.csproj"
             }
           }
         }
